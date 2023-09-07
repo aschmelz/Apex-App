@@ -22,10 +22,25 @@ nav {
     transition: all 0.2s ease 0s; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-  
+
+.form-inline {
+    display: flex;
+    justify-content: space-between; /* Distribute items horizontally */
+    align-items: center; /* Vertically center items within the form */
+}
+
+.container_icons {
+    margin-left: 50%;
+}
+
+.icon {
+    filter: invert(100%);
+    width: 20%;
+    height: 20%;
+}
+
 ul {
     list-style: none;
-
     padding: 0;
     text-align: center;
 }
@@ -49,7 +64,6 @@ a:hover {
 }
 
 .newGrid_container {
-    
     background-color: #0d1c3d;
     color: white;
     text-align: left;

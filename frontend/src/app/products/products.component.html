@@ -42,7 +42,7 @@
                 <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
                 <mat-cell *matCellDef="let product"> {{ product.name }}
                     <button mat-raised-button color="primary" (click)="addProduct(product)" type="button">Add to Cart</button>
-                </mat-cell>                    <!-- *matCellDef defines the individual cell. let product is the loop through apiResponse -->
+                </mat-cell>
             </ng-container>
         
             <!-- Price Column -->
