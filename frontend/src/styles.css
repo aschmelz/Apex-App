@@ -23,7 +23,7 @@ nav {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.form-inline {
+.home {
     display: flex;
     justify-content: space-between; /* Distribute items horizontally */
     align-items: center; /* Vertically center items within the form */
@@ -68,4 +68,8 @@ a:hover {
     color: white;
     text-align: left;
     padding: 10px;
+}
+
+.footerList {
+    float: left;
 }

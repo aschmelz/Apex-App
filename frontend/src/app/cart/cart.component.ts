@@ -36,7 +36,6 @@ export class CartComponent implements OnInit {
       this.cart = data.cart;
       this.dataSource = new MatTableDataSource(this.apiResponse);
       this.dataSource.paginator = this.paginator;
-      //console.log(data);
     })
   }
 
@@ -46,6 +45,7 @@ export class CartComponent implements OnInit {
         //console.log(this.cart[i]['count']);
         this.cart[i]['count'] = this.cart[i]['count'] + 1;
         this.updateCart(this.cart);
+        this.total += product.price;
         return;
       }
     }
@@ -64,9 +64,11 @@ export class CartComponent implements OnInit {
           this.cart.splice(i, 1);
         }
         this.updateCart(this.cart);
+        this.total -= product.price;
         return;
       }
     }
+    
   }
 
   updateCart(cart: any) {
@@ -77,18 +79,18 @@ export class CartComponent implements OnInit {
   }
 
   totalPrice() {
-    this.http.get(this.apiUrl + this.currentUserId, { headers: this.httpOptions }).subscribe((data: any) => {
-      let pricesArray = [];
-      for (let i = 0; i < data.cart.length; i++) {
-        let prices = data.cart[i].price * data.cart[i].count;
-        pricesArray.push(prices);
-      };
-
-      for (let i = 0; i < pricesArray.length; i++) {
-        //console.log(pricesArray[i]);
-        this.total += pricesArray[i];
-      };
+    this.total = 0;
+    this.http.get(this.apiUrl + this.currentUserId, { headers: this.httpOptions }).subscribe(() => {
+      console.log(this.cart);
+      //console.log(this.cart.length);
+      for (let i = 0; i < this.cart.length; i++) {
+        let prices = this.cart[i].price * this.cart[i].count;
+        //console.log(this.cart[i].price, this.cart[i].count);
+        //this.total += prices;
+        console.log(prices);
+        this.total += prices;
+        console.log(this.total);
+      }
     })
-    return this.total;
   }
 }
