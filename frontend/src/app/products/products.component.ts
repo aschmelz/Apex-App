@@ -16,7 +16,7 @@ export class ProductsComponent implements OnInit {                              
 
   apiResponse: any = "";                                                                    // Store data from database in variable apiResponse
   searchTerm: string = "";
-  displayedColumns = ["Name", "Price", "Brand", "Edit/Delete"];                             // Array for the names of the table columns
+  displayedColumns = ["Name", "Price", "Brand", "Add", "Edit/Delete"];                  // Array for the names of the table columns
   checkboxes = ["Amir", "Schmelz"];
   dataSource: MatTableDataSource<any>;
 
@@ -45,7 +45,7 @@ export class ProductsComponent implements OnInit {                              
       if (this.currentUserRole == "admin") {
         this.displayedColumns;
       } else {
-        this.displayedColumns = ["Name", "Price", "Brand"];
+        this.displayedColumns = ["Name", "Price", "Brand", "Add"];
       }
     });
   }

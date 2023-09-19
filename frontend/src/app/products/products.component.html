@@ -38,11 +38,9 @@
     <div class="container_table">    
         <table mat-table class="productTable" [dataSource]="dataSource">                   <!-- [dataSource] receives data from apiResponse -->
             <!-- Name Column -->
-            <ng-container matColumnDef="Name">                                                  <!-- matColumn def is from displayedColumns variable in ts file-->
+            <ng-container matColumnDef="Name">                                             <!-- matColumn def is from displayedColumns variable in ts file-->
                 <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-                <mat-cell *matCellDef="let product"> {{ product.name }}
-                    <button mat-raised-button color="primary" (click)="addProduct(product)" type="button">Add to Cart</button>
-                </mat-cell>
+                <mat-cell *matCellDef="let product"> {{ product.name }} </mat-cell>
             </ng-container>
         
             <!-- Price Column -->
@@ -55,6 +53,14 @@
             <ng-container matColumnDef="Brand">
                 <mat-header-cell *matHeaderCellDef> Brand </mat-header-cell>
                 <mat-cell *matCellDef="let product"> {{ product.brand }} </mat-cell>
+            </ng-container>
+
+            <!-- Add Column -->
+            <ng-container matColumnDef="Add">
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let product">
+                    <button mat-raised-button color="primary" (click)="addProduct(product)" type="button">Add to Cart</button>
+                </mat-cell>
             </ng-container>
             
             <!-- Edit/Delete Column -->
