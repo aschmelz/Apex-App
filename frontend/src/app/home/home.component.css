@@ -1,3 +1,42 @@
 .container {
     text-align: left;
+    background-color: white;
+}
+
+.container_authDealer {
+    background-color: white;
+}
+
+.authDealer {
+    background-color: white;
+    text-align: center;
+}
+
+.halfLogoLeft {
+    margin-top: 5%;
+    width: 50%;
+    display: inline-block; /* Display as inline-block to make them side by side */
+    vertical-align: top; /* Align them at the top */
+}
+
+.halfLogoRight {
+    margin-top: 5%;
+    width: 50%;
+    float: right;
+    vertical-align: top; /* Align them at the top */
+}
+
+.textLeft {
+    width: 50%;
+    color: black;
+    display: inline-block; /* Display as inline-block to make them side by side */
+    vertical-align: top; /* Align them at the top */
+    text-align: left;
+}
+
+.textRight {
+    width: 50%;
+    color: black;
+    display: inline-block; /* Display as inline-block to make them side by side */
+    vertical-align: top; /* Align them at the top */
 }

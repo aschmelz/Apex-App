@@ -1,4 +1,5 @@
-<h2>Items in cart: </h2>
+<div class="container_main">
+    <h2>Items in cart: </h2>
 
 <div>
     <mat-table class="productTable" [dataSource]="dataSource" class="mat-elevation-z8">                   <!-- [dataSource] receives data from apiResponse -->
@@ -46,4 +47,5 @@
     <div>
         <h2> Total Cost: {{ total | currency }}</h2>
     </div>
+</div>
 </div>
