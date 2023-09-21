@@ -124,6 +124,7 @@ export class ProductsComponent implements OnInit {                              
   
   // ----------------------------------- CART ADD -----------------------------------
   addProduct(product: any) {                       // Function to Add a product
+    alert("Added " + product.name);
     this.http.get(this.apiCartUrl + this.currentUserId, { headers: this.httpOptions }).subscribe((data: any) => {
       const cart = data.cart;
       //console.log(cart);
@@ -132,6 +133,7 @@ export class ProductsComponent implements OnInit {                              
           //console.log(cart[i]['count']);
           cart[i]['count'] = cart[i]['count'] + 1;
           this.updateCart(cart);
+          
           return;
         }
       }
