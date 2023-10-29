@@ -81,15 +81,15 @@ export class CartComponent implements OnInit {
   totalPrice() {
     this.total = 0;
     this.http.get(this.apiUrl + this.currentUserId, { headers: this.httpOptions }).subscribe(() => {
-      console.log(this.cart);
+      //console.log(this.cart);
       //console.log(this.cart.length);
       for (let i = 0; i < this.cart.length; i++) {
         let prices = this.cart[i].price * this.cart[i].count;
         //console.log(this.cart[i].price, this.cart[i].count);
         //this.total += prices;
-        console.log(prices);
+        //console.log(prices);
         this.total += prices;
-        console.log(this.total);
+        //console.log(this.total);
       }
     })
   }

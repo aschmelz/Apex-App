@@ -18,7 +18,12 @@ export class LoginComponent {
       localStorage.setItem("role", data.role);                                // set the role in localStorage to the user's role (Need for edit/delete buttons hide)
       localStorage.setItem("email", data.email);
       localStorage.setItem("_id", data._id);
-      console.log(data);
+      localStorage.setItem("firstName", data.firstName);
+      localStorage.setItem("lastName", data.lastName);
+      localStorage.setItem("companyName", data.companyName);
+      localStorage.setItem("companyAddress", data.companyAddress);
+      localStorage.setItem("phoneNumber", data.phoneNumber);
+      //console.log(data);
       alert("Successfully Logged In!");
     }, () => {
       alert("Invalid username/password");

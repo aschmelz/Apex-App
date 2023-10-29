@@ -76,7 +76,7 @@ router.get("/:id", authUser, (req, res) => {
         if (!err) {
             let nameCounts = {};
             //console.log(result);
-            let cart = result.cart
+            let cart = result.cart;
 
             for (let i = 0; i < cart.length; i++) {
                 //console.log(i);

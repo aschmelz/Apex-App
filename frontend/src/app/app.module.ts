@@ -23,6 +23,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CartComponent } from './cart/cart.component';
+import { InvoiceComponent } from './cart/invoice/invoice.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CartComponent } from './cart/cart.component';
     AboutUsComponent,
     RegisterComponent,
     LoginComponent,
-    CartComponent
+    CartComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,

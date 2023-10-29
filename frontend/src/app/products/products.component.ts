@@ -23,7 +23,7 @@ export class ProductsComponent implements OnInit {                              
   // JWT variables
   token = localStorage.getItem("jwt");
   currentUserRole: any = localStorage.getItem("role");
-  currentUserName: any = localStorage.getItem("email");
+  currentUserName: any = localStorage.getItem("firstName");
   currentUserId: any = localStorage.getItem("_id");
   httpOptions = new HttpHeaders().set("Authorization", "bearer " + this.token);             // Headers options for authorization middleware
   visible: boolean = true;
@@ -36,6 +36,7 @@ export class ProductsComponent implements OnInit {                              
   ngOnInit() {
     this.ifVisible();
     this.http.get(this.apiUrl, { headers: this.httpOptions }).subscribe((data:any) => {      
+      //console.log(this.httpOptions);
       this.apiResponse = data;
       this.dataSource = new MatTableDataSource(this.apiResponse);
       this.dataSource.paginator = this.paginator;
@@ -53,11 +54,11 @@ export class ProductsComponent implements OnInit {                              
   // Hide add items form
   ifVisible () {
     if (this.currentUserRole == "admin") {
-      console.log(this.currentUserRole);
+      //console.log(this.currentUserRole);
       this.visible = true;
     } else {
       this.visible = false;
-      console.log(this.currentUserRole);
+      //console.log(this.currentUserRole);
     }
   }
 
@@ -91,6 +92,7 @@ export class ProductsComponent implements OnInit {                              
     }
     //console.log(product);
     this.http.get(this.apiUrl + 'searchTerm?filter=' + JSON.stringify(filterObj)).subscribe((data: any) => {
+      //console.log(data);
       this.dataSource = data;
     });
   }

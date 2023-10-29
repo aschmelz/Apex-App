@@ -64,6 +64,7 @@ router.post("/register", (req, res) => {
 
 router.post("/login", async (req, res) => {
     User.findOne({ email: req.body.email }).then((result, err) => {
+        //console.log(result);
         if (!err) {
             if (result) {                                                                   // if user is found
                 bcrypt.compare(req.body.password, result.password, (err2, bcresult) => {    // compare the user input password with the result.password in mongodb
@@ -71,12 +72,27 @@ router.post("/login", async (req, res) => {
                         let payLoad = {
                             _id: result._id,                                                // payLoad will have the id from mongodb
                             role: result.role,                                              // payLoad will have the role from mongodb
-                            email: result.email                                             // payLoad will have the _id from mongodb
+                            email: result.email,                                            // payLoad will have the email from mongodb
+                            firstName: result.firstName,
+                            lastName: result.lastName,
+                            companyName: result.companyName,
+                            companyAddress: result.companyAddress,
+                            phoneNumber: result.phoneNumber
                         };
+                        //console.log(payLoad);
                         //let token = jwt.sign(payLoad, SECRET_KEY.parsed.SECRET_KEY);        // sign this private key to the payword and store as token
                         //console.log(SECRET_KEY.parsed.SECRET_KEY);
                         let token = jwt.sign(payLoad, SECRET_KEY.parsed.SECRET_KEY);
-                        res.status(200).send({ jwt: token, _id: payLoad._id, role: payLoad.role, email: payLoad.email });           // Send the token && email && role && _id
+                        res.status(200).send({ jwt: token,                                    // Send the token && email && role && _id
+                            _id: payLoad._id,
+                            role: payLoad.role,
+                            email: payLoad.email,
+                            firstName: payLoad.firstName,
+                            lastName: payLoad.lastName,
+                            companyName: payLoad.companyName,
+                            companyAddress: payLoad.companyAddress,
+                            phoneNumber: payLoad.phoneNumber
+                        });           
                     } else {
                         res.status(400).send("IF CLIENT INPUTS WRONG PASSWORD!");
                     }

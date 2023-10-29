@@ -1,0 +1,10 @@
+.invoice {
+    color: black;
+    background-color: white;
+}
+
+.submitBtn {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+}
