@@ -1,5 +1,5 @@
 <div class="container">
-    <h2>{{ currentUserName }} || Products</h2>
+    <h2 *ngIf="loggedVisible"> Welcome, {{ currentUserName }}</h2>
 
     <form class="add" *ngIf="visible" class="form-inline addProduct">
         <!-- Name Input -->

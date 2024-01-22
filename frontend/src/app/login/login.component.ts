@@ -34,7 +34,12 @@ export class LoginComponent {
     localStorage.removeItem("jwt");
     localStorage.removeItem("role");
     localStorage.removeItem("email");
-    localStorage.removeItem("_id")
+    localStorage.removeItem("_id");
+    localStorage.removeItem("companyAddress");
+    localStorage.removeItem("phoneNumber");
+    localStorage.removeItem("companyName");
+    localStorage.removeItem("firstName");
+    localStorage.removeItem("lastName");
     alert("Logged Out");
   }
 }

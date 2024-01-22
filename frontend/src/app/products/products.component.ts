@@ -27,6 +27,7 @@ export class ProductsComponent implements OnInit {                              
   currentUserId: any = localStorage.getItem("_id");
   httpOptions = new HttpHeaders().set("Authorization", "bearer " + this.token);             // Headers options for authorization middleware
   visible: boolean = true;
+  loggedVisible: boolean = true;
   
   // For paginator
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -35,6 +36,7 @@ export class ProductsComponent implements OnInit {                              
   // Load Products from MongoDB on page load
   ngOnInit() {
     this.ifVisible();
+    this.ifLoggedIn();
     this.http.get(this.apiUrl, { headers: this.httpOptions }).subscribe((data:any) => {      
       //console.log(this.httpOptions);
       this.apiResponse = data;
@@ -49,6 +51,12 @@ export class ProductsComponent implements OnInit {                              
         this.displayedColumns = ["Name", "Price", "Brand", "Add"];
       }
     });
+  }
+
+  ifLoggedIn() {
+    if (!this.currentUserRole) {
+      this.loggedVisible = false;
+    }
   }
 
   // Hide add items form
