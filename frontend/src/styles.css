@@ -33,7 +33,6 @@ nav {
 
 .icon {
     filter: invert(100%);
-<<<<<<< HEAD
     width: 32px;
     height: 32px;
     vertical-align: middle;
@@ -44,10 +43,6 @@ nav {
     width: 50px;
     height: 50px;
     vertical-align: middle;
-=======
-    width: 45px;
-    height: 45px;
->>>>>>> origin/main
 }
 
 ul {
@@ -89,7 +84,6 @@ a:hover {
         height: 30px;
         margin: 0 10px;
     }
-<<<<<<< HEAD
 
     .iconRight {
         width: 30px;
@@ -97,8 +91,6 @@ a:hover {
         margin: 10px 10px;
     }
 
-=======
->>>>>>> origin/main
     ul.navbar-nav {
         flex-direction: column;
         text-align: center;
@@ -109,7 +101,6 @@ a:hover {
 img.logo {
     max-width: 100%;
     height: auto;
-<<<<<<< HEAD
 }
 
 .container_logo {
@@ -124,6 +115,4 @@ img.logo {
 
 .collapse {
     width: 50%;
-=======
->>>>>>> origin/main
 }

@@ -40,13 +40,9 @@
             <!-- Name Column -->
             <ng-container matColumnDef="Name">                                             <!-- matColumn def is from displayedColumns variable in ts file-->
                 <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-<<<<<<< HEAD
                 <mat-cell *matCellDef="let product">
                     <a class="itemDescription" href="http://localhost:4200/itemSpecs/{{ product._id }}">{{ product.name }}</a>
                 </mat-cell>
-=======
-                <mat-cell *matCellDef="let product"> {{ product.name }} </mat-cell>
->>>>>>> origin/main
             </ng-container>
         
             <!-- Price Column -->

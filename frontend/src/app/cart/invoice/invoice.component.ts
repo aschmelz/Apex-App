@@ -51,10 +51,6 @@ export class InvoiceComponent implements OnInit {
   totalPrice() {
     this.total = 0;
     this.http.get(this.apiUrl + this.forGetInvoice + this.currentUserId, { headers: this.httpOptions }).subscribe((data: any) => {
-<<<<<<< HEAD
-=======
-      //console.log(data);
->>>>>>> origin/main
       for (let i = 0; i < this.cart.length; i++) {
         let prices = this.cart[i].price * this.cart[i].count;
         this.total += prices;
@@ -114,23 +110,16 @@ export class InvoiceComponent implements OnInit {
     const firstNameField = form.createTextField("firstName");
     firstNameField.setText(this.currentFirstName);
     firstNameField.addToPage(page, { x: 15, y: 815, width: 100, height: 20 });
-<<<<<<< HEAD
     firstNameField.enableReadOnly();
-=======
->>>>>>> origin/main
 
     const lastNameField = form.createTextField("lastName");
     lastNameField.setText(this.currentLastName);
     lastNameField.addToPage(page, { x: 130, y: 815, width: 100, height: 20 });
-<<<<<<< HEAD
     lastNameField.enableReadOnly();
-=======
->>>>>>> origin/main
 
     const currentEmailField = form.createTextField("email");
     currentEmailField.setText(this.currentEmail);
     currentEmailField.addToPage(page, { x: 245, y: 815, width: 200, height: 20 });
-<<<<<<< HEAD
     currentEmailField.enableReadOnly();
 
     const currentCompanyField = form.createTextField("companyName");
@@ -168,9 +157,6 @@ export class InvoiceComponent implements OnInit {
       cartItemPrice.enableReadOnly();
     }
     
-=======
-
->>>>>>> origin/main
     // Save PDF
     const pdfBytes = await pdfDoc.save();
     const blob = new Blob([pdfBytes], { type: 'application/pdf' });
@@ -179,8 +165,4 @@ export class InvoiceComponent implements OnInit {
     // Open Url to show copy and give option to download
     window.open(url);
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/main

@@ -1,16 +1,3 @@
 .container {
-<<<<<<< HEAD
-    background-color: #0d1c3d;
-    position: relative;
-}
-
-.text {
-    position: absolute;
-    top: 3%;
-    left: 7%;
-    transform: translate(-50%, -50%);
-  }
-=======
     background-color: #3575ff54;
 }
->>>>>>> origin/main

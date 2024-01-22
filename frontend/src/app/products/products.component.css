@@ -10,7 +10,6 @@ mat-cell, mat-paginator {
   background-color: rgba(158, 158, 158, 0.089); 
 }
 
-<<<<<<< HEAD
 .itemDescription {
   color: black;
   text-decoration: underline;
@@ -21,8 +20,6 @@ mat-cell, mat-paginator {
   text-decoration: none;
 }
 
-=======
->>>>>>> origin/main
 .container_checkbox {
   float: left;
   margin-left: 0.5%;

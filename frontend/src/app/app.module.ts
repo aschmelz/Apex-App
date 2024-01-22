@@ -24,10 +24,7 @@ import { LoginComponent } from './login/login.component';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CartComponent } from './cart/cart.component';
 import { InvoiceComponent } from './cart/invoice/invoice.component';
-<<<<<<< HEAD
 import { ItemSpecsComponent } from './products/item-specs/item-specs.component';
-=======
->>>>>>> origin/main
 
 @NgModule({
   declarations: [
@@ -38,12 +35,8 @@ import { ItemSpecsComponent } from './products/item-specs/item-specs.component';
     RegisterComponent,
     LoginComponent,
     CartComponent,
-<<<<<<< HEAD
     InvoiceComponent,
     ItemSpecsComponent
-=======
-    InvoiceComponent
->>>>>>> origin/main
   ],
   imports: [
     BrowserModule,
