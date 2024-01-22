@@ -1,0 +1,50 @@
+<img class="loginPic" src="../../assets/images/key.png" alt="" width="72" height="72">
+<div class="container">
+    <form class="form-inline">
+        
+        <mat-form-field class="name-width">
+            <mat-label>First Name</mat-label>
+            <input name="firstName" placeholder="First Name" matInput [(ngModel)]="firstName">
+        </mat-form-field>
+
+        <mat-form-field class="name-width">
+            <mat-label>Last Name</mat-label>
+            <input name="lastName" placeholder="Last Name" matInput [(ngModel)]="lastName">
+        </mat-form-field>
+
+        <mat-form-field class="name-width">
+            <mat-label>Company Name</mat-label>
+            <input name="companyName" placeholder="Company Name" matInput [(ngModel)]="companyName">
+        </mat-form-field>
+
+        <mat-form-field class="name-width">
+            <mat-label>Company Address</mat-label>
+            <input name="companyAddress" placeholder="Company Address" matInput [(ngModel)]="companyAddress">
+        </mat-form-field>
+
+        <mat-form-field class="name-width">
+            <mat-label>Phone Number</mat-label>
+            <input name="phoneNumber" placeholder="Phone Number" matInput [(ngModel)]="phoneNumber">
+        </mat-form-field>
+        
+        <!-- ***************************************
+                        Email Input 
+        *************************************** -->
+        <mat-form-field class="name-width">
+            <mat-label>Email</mat-label>
+            <input name="email" placeholder="Input Email" matInput [(ngModel)]="email">
+        </mat-form-field>
+
+        <!-- ***************************************
+                        Password Input
+        *************************************** -->
+        <mat-form-field class="price-width">
+            <mat-label>Password</mat-label>
+            <input name="password" placeholder="Input Password" matInput [(ngModel)]="password">
+        </mat-form-field>
+
+
+
+        <button class="registerBtn" type="button" (click)="userRegister()" mat-raised-button color="primary">Register</button>
+    </form>
+</div>

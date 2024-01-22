@@ -1,0 +1,14 @@
+.container {
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+h1 {
+    color: #0d1c3d;
+}
+
+.photo {
+    width: 108px;
+    height: 108px;
+}

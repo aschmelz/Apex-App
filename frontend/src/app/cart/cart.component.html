@@ -1,0 +1,54 @@
+<div class="container_main">
+    <h2>Items in cart: </h2>
+
+<div>
+    <mat-table class="productTable" [dataSource]="dataSource" class="mat-elevation-z8">                   <!-- [dataSource] receives data from apiResponse -->
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="Name">                                                  <!-- matColumn def is from displayedColumns variable in ts file-->
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let product"> {{ product.name }} </mat-cell>                    <!-- *matCellDef defines the individual cell. let product is the loop through apiResponse -->
+        </ng-container>
+    
+        <!-- Price Column -->
+        <ng-container matColumnDef="Price">
+            <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+            <mat-cell *matCellDef="let product"> {{ product.price | currency }} </mat-cell>
+        </ng-container>
+
+        <!-- Brand Column -->
+        <ng-container matColumnDef="Brand">
+            <mat-header-cell *matHeaderCellDef> Brand </mat-header-cell>
+            <mat-cell *matCellDef="let product"> {{ product.brand }} </mat-cell>
+        </ng-container>
+
+            <ng-container matColumnDef="Quantity">
+            <mat-header-cell *matHeaderCellDef> Quantity </mat-header-cell>
+            <mat-cell class="somethingElse" *matCellDef="let product">
+                <h4 class="quantity"> ({{ product.count }}) </h4>
+                <button mat-raised-button color="primary" type="button" (click)="addProduct(product)"> + </button>
+                <button mat-raised-button color="warn" type="button" (click)="removeProduct(product)"> - </button>
+            </mat-cell>
+            </ng-container>
+        
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        
+    </mat-table>
+
+    <mat-paginator
+        [length]="apiResponse.length"
+        [pageSize]="5"
+        [pageSizeOptions]="[10, 15, 20]"
+        showFirstLastButtons>
+    </mat-paginator>
+
+    <div>
+        <h2> Total Cost: {{ total | currency }}</h2>
+        <a href="/invoice">
+            <button mat-raised-button color="primary" type="button"> Checkout </button>
+        </a>
+    </div>
+</div>
+</div>

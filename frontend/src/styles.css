@@ -1,0 +1,129 @@
+/* FONTS */
+@font-face {
+    font-family: 'Roboto';
+    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #0d1c3d; /* Replace 'your-color' with your desired background color */
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+/* Default styles for larger screens */
+nav {
+    height: auto;
+    padding: 20px;
+    background-color: #0d1c3d;
+    color: white;
+    border: 20px;
+    transition: all 0.2s ease 0s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon {
+    filter: invert(100%);
+<<<<<<< HEAD
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+}
+
+.iconRight {
+    filter: invert(100%);
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+=======
+    width: 45px;
+    height: 45px;
+>>>>>>> origin/main
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    position: left;
+    display: inline-block;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: white;
+    border: 20px;
+    border-radius: 6px;
+    text-decoration: underline;
+}
+
+/* Media query for screens with a maximum width of 768px (tablets and smaller) */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px;
+        text-align: center;
+    }
+    .container_icons {
+        display: flex;
+        justify-content: space-between;
+    }
+    .icon {
+        width: 30px;
+        height: 30px;
+        margin: 0 10px;
+    }
+<<<<<<< HEAD
+
+    .iconRight {
+        width: 30px;
+        height: 30px;
+        margin: 10px 10px;
+    }
+
+=======
+>>>>>>> origin/main
+    ul.navbar-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Responsive Images */
+img.logo {
+    max-width: 100%;
+    height: auto;
+<<<<<<< HEAD
+}
+
+.container_logo {
+    width: 25%;
+    text-align: left;
+}
+
+.container_icons {
+    width: 25%;
+    text-align: right;
+}
+
+.collapse {
+    width: 50%;
+=======
+>>>>>>> origin/main
+}

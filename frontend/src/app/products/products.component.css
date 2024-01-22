@@ -1,0 +1,55 @@
+.container {
+  background-color: white;
+}
+
+.container_table {
+  margin: 0 0 0 10%;
+}
+
+mat-cell, mat-paginator {
+  background-color: rgba(158, 158, 158, 0.089); 
+}
+
+<<<<<<< HEAD
+.itemDescription {
+  color: black;
+  text-decoration: underline;
+}
+
+.itemDescription:active {
+  color: #4983ff;
+  text-decoration: none;
+}
+
+=======
+>>>>>>> origin/main
+.container_checkbox {
+  float: left;
+  margin-left: 0.5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-width {
+    width: 25%;
+    margin-right: 0.5%;
+    min-height: 10px;
+    max-height: 75px;
+}
+
+.editBtn {
+  margin-right: 0.5%;
+}
+
+.search {
+  text-align: center;
+}
+
+.checkboxes {
+  position: left;
+  vertical-align: middle;
+}
+
+.addProduct {
+  text-align: center;
+}

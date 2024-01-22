@@ -1,0 +1,93 @@
+<div class="container">
+    <h2>{{ currentUserName }} || Products</h2>
+
+    <form class="add" *ngIf="visible" class="form-inline addProduct">
+        <!-- Name Input -->
+        <mat-form-field class="name-width npb">
+            <mat-label>Product</mat-label>
+            <input #name class="addProductInput" placeholder="Add product" matInput>
+        </mat-form-field>
+
+        <!-- Price Input -->
+        <mat-form-field class="price-width npb">
+            <mat-label>Price</mat-label>
+            <input #price class="addPriceInput" placeholder="Add Price" matInput>
+        </mat-form-field>
+
+        <!-- Brand Input -->
+        <mat-form-field class="brand-width npb">
+            <mat-label>Brand</mat-label>
+            <input #brand class="addBrandInput" placeholder="Add Brand" matInput>
+        </mat-form-field>
+        <button class="addProductBtn" type="btn" (click)="addItem(name.value, price.value, brand.value)"  mat-raised-button color="primary">Add Product</button>
+    </form>
+
+    <form class="form-inline search">
+        <mat-form-field class="search-width">
+          <mat-label>Search Here</mat-label>
+          <input [(ngModel)]="searchTerm" (input)="filterItems(searchTerm)" matInput placeholder="Search Product">
+        </mat-form-field>
+        <button (click)="filterItems(searchTerm)" type="button" class="searchBtn" mat-raised-button color="primary">Search</button>
+    </form>
+    <!-- <mat-divider></mat-divider> -->
+    <div class="container_checkbox">
+        <h5> Filter: </h5>
+        <mat-checkbox color="primary" *ngFor="let check of checkboxes" (change)="filterByCheck(check, $event.checked)">{{ check }}</mat-checkbox> <!-- HOW TO EXTRACT VALUE FROM MAT-CHECKBOX -->
+    </div>
+
+    <div class="container_table">    
+        <table mat-table class="productTable" [dataSource]="dataSource">                   <!-- [dataSource] receives data from apiResponse -->
+            <!-- Name Column -->
+            <ng-container matColumnDef="Name">                                             <!-- matColumn def is from displayedColumns variable in ts file-->
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+<<<<<<< HEAD
+                <mat-cell *matCellDef="let product">
+                    <a class="itemDescription" href="http://localhost:4200/itemSpecs/{{ product._id }}">{{ product.name }}</a>
+                </mat-cell>
+=======
+                <mat-cell *matCellDef="let product"> {{ product.name }} </mat-cell>
+>>>>>>> origin/main
+            </ng-container>
+        
+            <!-- Price Column -->
+            <ng-container matColumnDef="Price">
+                <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+                <mat-cell *matCellDef="let product"> {{ product.price | currency }} </mat-cell>
+            </ng-container>
+
+            <!-- Brand Column -->
+            <ng-container matColumnDef="Brand">
+                <mat-header-cell *matHeaderCellDef> Brand </mat-header-cell>
+                <mat-cell *matCellDef="let product"> {{ product.brand }} </mat-cell>
+            </ng-container>
+
+            <!-- Add Column -->
+            <ng-container matColumnDef="Add">
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let product">
+                    <button mat-raised-button color="primary" (click)="addProduct(product)" type="button">Add to Cart</button>
+                </mat-cell>
+            </ng-container>
+            
+            <!-- Edit/Delete Column -->
+            <ng-container matColumnDef="Edit/Delete">
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let product">
+                    <button class="editBtn" mat-raised-button color="primary" (click)="editProduct(product._id)" type="button">Edit</button>
+                    <button mat-raised-button color="warn" (click)="deleteProduct(product._id)" type="button">Delete</button>
+                </mat-cell>
+            </ng-container>
+            
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </table>
+
+        <mat-paginator
+            [length]="apiResponse.length"
+            [pageSize]="5"
+            [pageSizeOptions]="[10, 15, 20]"
+            showFirstLastButtons>
+        </mat-paginator>
+
+    </div>
+</div>

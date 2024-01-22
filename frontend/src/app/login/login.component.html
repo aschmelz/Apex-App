@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="imgDiv">
+        <img class="loginPic" src="../../assets/images/key.png" alt="" width="72" height="72">
+    </div>
+    <!-- ***************************************
+                    Email Input 
+    *************************************** -->
+    <div class="emailDiv">
+        <mat-form-field class="name-width">
+            <mat-label>Email</mat-label>
+            <input class="emailInput" placeholder="Input Email" matInput [(ngModel)]="email">
+        </mat-form-field>
+    </div>
+    
+    <!-- ***************************************
+                    Password Input
+    *************************************** -->
+
+    <div class="passwordDiv">
+        <mat-form-field class="price-width">
+            <mat-label>Password</mat-label>
+            <input class="passwordInput" type="password" placeholder="Input Password" matInput [(ngModel)]="password">
+        </mat-form-field>
+    </div>
+    <button (click)="userLogin()" class="registerBtn" mat-raised-button color="primary">Login</button>
+    <button (click)="userLogout()" class="registerBtn" mat-raised-button color="warn">Logout</button>
+</div>
