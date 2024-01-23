@@ -7,7 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
 import { InvoiceComponent } from './cart/invoice/invoice.component';
-import { ItemSpecsComponent } from './products/item-specs/item-specs.component';
+import { CategoryListComponent } from './products/category-list/category-list.component';
 
 
 const routes: Routes = [
@@ -40,8 +40,8 @@ const routes: Routes = [
     component: InvoiceComponent
   },
   {
-    path: "itemSpecs/:id",
-    component: ItemSpecsComponent
+    path: "products/:tile_name",
+    component: CategoryListComponent
   }
 ];
   

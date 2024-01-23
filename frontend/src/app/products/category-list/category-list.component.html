@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="container_table">    
+        <table mat-table class="productTable" [dataSource]="dataSource">                   <!-- [dataSource] receives data from apiResponse -->
+            <!-- Name Column -->
+            <ng-container matColumnDef="Name">                                             <!-- matColumn def is from displayedColumns variable in ts file-->
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let product">
+                    <a class="itemDescription" href="http://localhost:4200/itemSpecs/{{ product._id }}">{{ product.name }}</a>
+                </mat-cell>
+            </ng-container>
+        
+            <!-- Price Column -->
+            <ng-container matColumnDef="Price">
+                <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+                <mat-cell *matCellDef="let product"> {{ product.price | currency }} </mat-cell>
+            </ng-container>
+
+            <!-- Brand Column -->
+            <ng-container matColumnDef="Brand">
+                <mat-header-cell *matHeaderCellDef> Brand </mat-header-cell>
+                <mat-cell *matCellDef="let product"> {{ product.brand }} </mat-cell>
+            </ng-container>
+
+            <!-- Add Column -->
+            <ng-container matColumnDef="Add">
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let product">
+                    <button mat-raised-button color="primary" (click)="addProduct(product)" type="button">Add to Cart</button>
+                </mat-cell>
+            </ng-container>
+            
+            <!-- Edit/Delete Column -->
+            <ng-container matColumnDef="Edit/Delete">
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let product">
+                    <button class="editBtn" mat-raised-button color="primary" (click)="editProduct(product._id)" type="button">Edit</button>
+                    <button mat-raised-button color="warn" (click)="deleteProduct(product._id)" type="button">Delete</button>
+                </mat-cell>
+            </ng-container>
+            
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </table>
+
+        <mat-paginator
+            [length]="apiResponse.length"
+            [pageSize]="5"
+            [pageSizeOptions]="[10, 15, 20]"
+            showFirstLastButtons>
+        </mat-paginator>
+
+    </div>
+</div>

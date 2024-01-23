@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 // Components
 import { AppComponent } from './app.component';
@@ -24,7 +25,7 @@ import { LoginComponent } from './login/login.component';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CartComponent } from './cart/cart.component';
 import { InvoiceComponent } from './cart/invoice/invoice.component';
-import { ItemSpecsComponent } from './products/item-specs/item-specs.component';
+import { CategoryListComponent } from './products/category-list/category-list.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { ItemSpecsComponent } from './products/item-specs/item-specs.component';
     LoginComponent,
     CartComponent,
     InvoiceComponent,
-    ItemSpecsComponent
+    CategoryListComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +51,8 @@ import { ItemSpecsComponent } from './products/item-specs/item-specs.component';
     MatInputModule,
     MatDividerModule,
     MatButtonModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,7 +8,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #0d1c3d; /* Replace 'your-color' with your desired background color */
+    background-color: white;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     font-weight: 400;
     font-size: 18px;
@@ -18,7 +18,7 @@ html, body {
 nav {
     height: auto;
     padding: 20px;
-    background-color: #0d1c3d;
+    background-color: #006db0;
     color: white;
     border: 20px;
     transition: all 0.2s ease 0s;

@@ -3,11 +3,13 @@
 }
 
 .container_table {
-  margin: 0 0 0 10%;
+  margin: 1%;
+  margin-bottom: 1%;
 }
 
-mat-cell, mat-paginator {
-  background-color: rgba(158, 158, 158, 0.089); 
+mat-grid-tile {
+  background: #0d1c3d;
+  color: white;
 }
 
 .itemDescription {

@@ -4,12 +4,11 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  selector: 'app-category-list',
+  templateUrl: './category-list.component.html',
+  styleUrls: ['./category-list.component.css']
 })
-
-export class ProductsComponent implements OnInit {                                          // Need to have "implements OnInit" to load before page load
+export class CategoryListComponent implements OnInit {                                    // Need to have "implements OnInit" to load before page load
   // To connect to express
   private apiUrl = 'http://localhost:3000/';
   private apiCartUrl = 'http://localhost:3000/users/cart/';
