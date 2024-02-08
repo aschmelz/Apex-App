@@ -15,7 +15,7 @@ export class CategoryListComponent implements OnInit {                          
 
   apiResponse: any = "";                                                                    // Store data from database in variable apiResponse
   searchTerm: string = "";
-  displayedColumns = ["Name", "Price", "Brand", "Add", "Edit/Delete"];                  // Array for the names of the table columns
+  displayedColumns = ["Name", "Price", "Brand", "Edit/Delete"];                  // Array for the names of the table columns
   checkboxes = ["Amir", "Schmelz"];
   dataSource: MatTableDataSource<any>;
 
@@ -36,7 +36,6 @@ export class CategoryListComponent implements OnInit {                          
   // Load Products from MongoDB on page load
   ngOnInit() {
     this.ifVisible();
-    this.ifLoggedIn();
     this.http.get(this.apiUrl, { headers: this.httpOptions }).subscribe((data:any) => {      
       //console.log(this.httpOptions);
       this.apiResponse = data;
@@ -48,16 +47,11 @@ export class CategoryListComponent implements OnInit {                          
       if (this.currentUserRole == "admin") {
         this.displayedColumns;
       } else {
-        this.displayedColumns = ["Name", "Price", "Brand", "Add"];
+        this.displayedColumns = ["Name", "Price", "Brand"];
       }
     });
   }
 
-  ifLoggedIn() {
-    if (!this.currentUserRole) {
-      this.loggedVisible = false;
-    }
-  }
 
   // Hide add items form
   ifVisible () {
@@ -131,32 +125,4 @@ export class CategoryListComponent implements OnInit {                          
     })
     }
   }
-  
-  // ----------------------------------- CART ADD -----------------------------------
-  addProduct(product: any) {                       // Function to Add a product
-    alert("Added " + product.name);
-    this.http.get(this.apiCartUrl + this.currentUserId, { headers: this.httpOptions }).subscribe((data: any) => {
-      const cart = data.cart;
-      //console.log(cart);
-      for (let i = 0; i < cart.length; i++) {
-        if (product.name == cart[i]['name']) {
-          //console.log(cart[i]['count']);
-          cart[i]['count'] = cart[i]['count'] + 1;
-          this.updateCart(cart);
-          
-          return;
-        }
-      }
-
-      product['count'] = 1;
-      cart.push(product);
-      this.updateCart(cart);
-    })
-  }
-
-  updateCart(cart: any) {
-    //console.log(this.apiCartUrl);
-    this.http.post(this.apiCartUrl + this.currentUserId, cart, { headers: this.httpOptions }).subscribe((data: any) => {})
-  }
-
 }

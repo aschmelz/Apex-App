@@ -20,14 +20,6 @@
                 <mat-header-cell *matHeaderCellDef> Brand </mat-header-cell>
                 <mat-cell *matCellDef="let product"> {{ product.brand }} </mat-cell>
             </ng-container>
-
-            <!-- Add Column -->
-            <ng-container matColumnDef="Add">
-                <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                <mat-cell *matCellDef="let product">
-                    <button mat-raised-button color="primary" (click)="addProduct(product)" type="button">Add to Cart</button>
-                </mat-cell>
-            </ng-container>
             
             <!-- Edit/Delete Column -->
             <ng-container matColumnDef="Edit/Delete">

@@ -9,7 +9,6 @@ import { CartComponent } from './cart/cart.component';
 import { InvoiceComponent } from './cart/invoice/invoice.component';
 import { CategoryListComponent } from './products/category-list/category-list.component';
 
-
 const routes: Routes = [
   {
     path: "products",
@@ -40,7 +39,7 @@ const routes: Routes = [
     component: InvoiceComponent
   },
   {
-    path: "products/:tile_name",
+    path: "products/:title_name",
     component: CategoryListComponent
   }
 ];
