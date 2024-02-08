@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-category-list',
   templateUrl: './category-list.component.html',
@@ -11,7 +13,6 @@ import { MatTableDataSource } from '@angular/material/table';
 export class CategoryListComponent implements OnInit {                                    // Need to have "implements OnInit" to load before page load
   // To connect to express
   private apiUrl = 'http://localhost:3000/';
-  private apiCartUrl = 'http://localhost:3000/users/cart/';
 
   apiResponse: any = "";                                                                    // Store data from database in variable apiResponse
   searchTerm: string = "";
@@ -27,7 +28,6 @@ export class CategoryListComponent implements OnInit {                          
   httpOptions = new HttpHeaders().set("Authorization", "bearer " + this.token);             // Headers options for authorization middleware
   visible: boolean = true;
   loggedVisible: boolean = true;
-  tileNames: string[] = ["Fittings", "Pipe", "Chemicals", "Hangers", "Faucets", "Toilets & Urinals", "Water Heaters", "Garbage Disposals", "Venting"];
   
   // For paginator
   @ViewChild(MatPaginator) paginator: MatPaginator;
