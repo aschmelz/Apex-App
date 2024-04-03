@@ -1,7 +1,7 @@
 <div class="invoice">
     <div class="invoice-header">
         <h1>Invoice</h1>
-        <p>Invoice Number: {{ invoiceNumber }}</p>
+        <p>Invoice Number: INV-{{ startingInvoiceNumber }}</p>
         <p>Date: {{ date }}</p>
     </div>
 
@@ -22,7 +22,15 @@
                     <td>{{ item.price | currency}}</td>
                     <td>{{ item.count * item.price | currency}}</td>
                 </tr>
-                <td> Total: {{ total | currency }}</td>
+                <tr>
+                    <td><strong>Subtotal: {{ subTotal | currency }}</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Tax: {{ tax | currency }}</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Total: {{ total | currency }}</strong></td>
+                </tr>
             </tbody>
         </table>
     </div>

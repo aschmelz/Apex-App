@@ -78,7 +78,7 @@
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
         </table>
 
-        <mat-paginator
+        <mat-paginator>
             [length]="apiResponse.length"
             [pageSize]="5"
             [pageSizeOptions]="[10, 15, 20]"

@@ -1,9 +1,23 @@
-img.loginPic {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.registration-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+}
 
-div {
-    text-align: center;
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.register-btn {
+  margin-top: 20px;
+  width: 100%;
 }

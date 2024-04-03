@@ -1,6 +1,26 @@
 .invoice {
     color: black;
     background-color: white;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center align horizontally */
+}
+
+.invoice-header,
+.invoice-body,
+.submission,
+h1 {
+    width: 100%; /* Ensure full width */
+    max-width: 600px; /* Limit width for better readability */
+}
+
+.invoice-body table {
+    width: 100%;
+}
+
+.invoice-body table th,
+.invoice-body table td {
+    text-align: left; /* Left justify table content */
 }
 
 .submitBtn {

@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatCardModule } from '@angular/material/card';
 
 // Components
 import { AppComponent } from './app.component';
@@ -50,7 +51,8 @@ import { ItemSpecsComponent } from './products/item-specs/item-specs.component';
     MatInputModule,
     MatDividerModule,
     MatButtonModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

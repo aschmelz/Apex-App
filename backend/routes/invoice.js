@@ -6,14 +6,14 @@ const authUser = require("../middleware/authUser.js")
 
 // Sort the invoice numbers => need most recent invoiceNumber then increment the value in frontend
 router.get("/getInvoices", (req, res) => {
-    Invoice.find({}).sort({ "invoiceNumber": -1 }).then((result, err) => {
+    Invoice.find().then((result, err) => {
         if (!err) {
-            res.status(200).send(result[0]);
+            res.status(200).send(result);
         } else {
-            res.status(400).send(result);
+            res.status(400).send(err);
         }
     })
-})
+});
 
 router.get("/getInvoices/:id", authUser, (req, res) => {
     User.findById(req.params.id).then((result, err) => {

@@ -6,10 +6,6 @@
   margin: 0 0 0 10%;
 }
 
-mat-cell, mat-paginator {
-  background-color: rgba(158, 158, 158, 0.089); 
-}
-
 .itemDescription {
   color: black;
   text-decoration: underline;

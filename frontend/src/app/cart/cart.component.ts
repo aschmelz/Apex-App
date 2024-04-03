@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';    // Must import OnInit to have before page load
+import { Component, ViewChild, OnInit } from '@angular/core';                     // Must import OnInit to have before page load
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -14,7 +14,7 @@ export class CartComponent implements OnInit {
   currentUserId: any = localStorage.getItem("_id");
 
   apiResponse: any = "";                                                           // Store data from database in variable apiResponse
-  displayedColumns = ["Name", "Price", "Brand", "Quantity"];                             // Array for the names of the table columns
+  displayedColumns = ["Name", "Price", "Brand", "Quantity"];                       // Array for the names of the table columns
   dataSource: MatTableDataSource<any>;
   token = localStorage.getItem("jwt");
   httpOptions = new HttpHeaders().set("Authorization", "bearer " + this.token);    // Headers options for authorization middleware
@@ -49,6 +49,7 @@ export class CartComponent implements OnInit {
         return;
       }
     }
+
     product['count'] = 1;
     this.cart.push(product);
     this.updateCart(this.cart);
@@ -68,7 +69,6 @@ export class CartComponent implements OnInit {
         return;
       }
     }
-    
   }
 
   updateCart(cart: any) {

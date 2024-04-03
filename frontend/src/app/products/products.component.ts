@@ -2,6 +2,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';    // Must import 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-products',
